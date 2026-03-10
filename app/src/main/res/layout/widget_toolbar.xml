@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar
+<com.google.android.material.appbar.MaterialToolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:minHeight="?attr/actionBarSize"
-    android:background="?colorPrimary"
+    android:layout_height="?android:actionBarSize"
+    android:minHeight="?android:actionBarSize"
+    android:background="?attr/colorSurfaceContainer"
     android:elevation="@dimen/toolbar_elevation"
     app:titleMarginStart="16dp"
     android:theme="@style/ThemeOverlay.Syncthing.Toolbar"
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatRadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/btnActive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,9 +26,9 @@
             android:focusable="false"
             android:clickable="false"
             android:visibility="gone"
-            app:buttonTint="#76ff03"/>
+            app:buttonTint="?attr/colorPrimary"/>
 
-        <androidx.appcompat.widget.AppCompatRadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/btnStarting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,9 +36,9 @@
             android:focusable="false"
             android:clickable="false"
             android:visibility="gone"
-            app:buttonTint="#fff103"/>
+            app:buttonTint="?attr/colorTertiary"/>
 
-        <androidx.appcompat.widget.AppCompatRadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/btnDisabled"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
             android:focusable="false"
             android:clickable="false"
             android:visibility="gone"
-            app:buttonTint="#ffae03"/>
+            app:buttonTint="?attr/colorError"/>
 
     </RelativeLayout>
 
@@ -72,7 +72,7 @@
         <TextView
             android:id="@+id/tvTotalSyncComplete"
             android:background="#00000000"
-            android:color="@android:color/white"
+            android:textColor="?attr/colorOnSurfaceVariant"
             android:layout_centerVertical="true"
             android:gravity="center"
             android:layout_alignStart="@id/pbTotalSyncComplete"
@@ -87,4 +87,4 @@
             tools:ignore="SmallSp" />
     </RelativeLayout>
 
-</androidx.appcompat.widget.Toolbar>
+</com.google.android.material.appbar.MaterialToolbar>
