@@ -12,7 +12,9 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorSurfaceContainer">
+            android:background="?attr/colorSurfaceContainer"
+            app:liftOnScroll="true"
+            app:liftOnScrollTargetViewId="@id/pager">
 
             <include layout="@layout/widget_toolbar" />
 
@@ -21,12 +23,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/colorSurfaceContainer"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
                 app:tabGravity="fill"
                 app:tabIndicatorAnimationMode="elastic"
                 app:tabIndicatorColor="?attr/colorPrimary"
                 app:tabIndicatorFullWidth="false"
                 app:tabInlineLabel="true"
                 app:tabMode="fixed"
+                app:tabRippleColor="?attr/colorPrimary"
                 app:tabSelectedTextColor="?attr/colorPrimary"
                 app:tabTextColor="?attr/colorOnSurfaceVariant"
                 android:theme="@style/ThemeOverlay.Syncthing.Toolbar" />

@@ -9,6 +9,7 @@
     android:minHeight="?android:actionBarSize"
     android:background="?attr/colorSurfaceContainer"
     android:elevation="@dimen/toolbar_elevation"
+    app:contentInsetStartWithNavigation="16dp"
     app:titleMarginStart="16dp"
     android:theme="@style/ThemeOverlay.Syncthing.Toolbar"
     android:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
@@ -16,7 +17,9 @@
     <RelativeLayout
         android:id="@+id/topRel1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/btnActive"
@@ -52,9 +55,10 @@
 
     <RelativeLayout
         android:id="@+id/topRelTotalSyncProgress"
-        android:layout_width="30dp"
+        android:layout_width="32dp"
         android:layout_height="match_parent"
         android:layout_toEndOf="@+id/topRel1"
+        android:layout_marginStart="8dp"
         android:visibility="gone" >
 
         <ProgressBar
