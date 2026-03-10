@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <include layout="@layout/widget_toolbar" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabContainer"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?colorPrimary"
-            android:elevation="@dimen/toolbar_elevation"
-            android:theme="@style/ThemeOverlay.Syncthing.Toolbar" />
+            android:background="?attr/colorSurfaceContainer"
+            app:liftOnScroll="true"
+            app:liftOnScrollTargetViewId="@id/pager">
 
-        <RelativeLayout
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            <include layout="@layout/widget_toolbar" />
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/pager"
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabExit"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:contentDescription="@string/exit"
-                app:srcCompat="@drawable/ic_exit_door_arrow"
-                app:backgroundTint="@color/primary"
-                app:fabSize="normal" />
+                android:background="?attr/colorSurfaceContainer"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                app:tabGravity="fill"
+                app:tabIndicatorAnimationMode="elastic"
+                app:tabIndicatorColor="?attr/colorPrimary"
+                app:tabIndicatorFullWidth="false"
+                app:tabInlineLabel="true"
+                app:tabMode="fixed"
+                app:tabRippleColor="?attr/colorPrimary"
+                app:tabSelectedTextColor="?attr/colorPrimary"
+                app:tabTextColor="?attr/colorOnSurfaceVariant"
+                android:theme="@style/ThemeOverlay.Syncthing.Toolbar" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-        </RelativeLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/exit"
+            app:backgroundTint="?attr/colorPrimaryContainer"
+            app:layout_anchor="@id/pager"
+            app:layout_anchorGravity="bottom|end"
+            app:srcCompat="@drawable/ic_exit_door_arrow"
+            app:tint="?attr/colorOnPrimaryContainer" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <FrameLayout
         android:id="@+id/drawer"

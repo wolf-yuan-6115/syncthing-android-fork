@@ -3,6 +3,8 @@ package com.nutomic.syncthingandroid;
 import android.app.Application;
 import android.os.StrictMode;
 
+import com.google.android.material.color.DynamicColors;
+
 import javax.inject.Inject;
 
 public class SyncthingApp extends Application {
@@ -12,6 +14,7 @@ public class SyncthingApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        DynamicColors.applyToActivitiesIfAvailable(this);
 
         DaggerDaggerComponent.builder()
                 .syncthingModule(new SyncthingModule(this))
